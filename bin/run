@@ -3,3 +3,6 @@
 require_relative "../environment"
 
 puts "hello"
+
+cli_instance = CLI.new
+cli_instance.start
