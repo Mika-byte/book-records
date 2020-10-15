@@ -6,17 +6,22 @@ def self.fetch_records
      uri = URI(url)
      response = Net::HTTP.get(uri)
      hash = JSON.parse(response)
+     
+     array_of_records = hash["records"]
 
-     array_of_records = hash[records]
-
-     # :title,  :subjects, :authors, :edition_name
+     
      
      
      array_of_records.each do |record_hash|
-        binding.pry
+        
+        record = Record.new
+        record.title = record_hash[title]
+        record.subjects = record_hash[subjects]
+        record.authors = record_hash[authors]
+        record.edition_name = record_hash[redition_name]
     end
-     
-     
+
+    binding.pry
     end 
     
 
