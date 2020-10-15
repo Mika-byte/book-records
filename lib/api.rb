@@ -20,8 +20,9 @@ def self.fetch_records
         record.authors = record_hash[authors]
         record.edition_name = record_hash[redition_name]
     end
-
     binding.pry
+
+    
     end 
     
 
